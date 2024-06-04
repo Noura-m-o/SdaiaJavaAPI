@@ -60,4 +60,14 @@ public class Jobs {
 
 
     }
+
+    @Override
+    public String toString() {
+        return "Jobs{" +
+                "job_id=" + job_id +
+                ", job_title='" + job_title + '\'' +
+                ", min_salary=" + min_salary +
+                ", max_salary=" + max_salary +
+                '}';
+    }
 }

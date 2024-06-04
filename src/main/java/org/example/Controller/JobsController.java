@@ -10,16 +10,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 @Path("/jobs")
-
+@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public class JobsController {
 
     JobsDAO dao = new JobsDAO();
 
     @GET
-    public ArrayList<Jobs> SELECT_ALL_JOBS() {
 
+    public ArrayList<Jobs> SELECT_ALL_JOBS(
+        @QueryParam("min_salary") Double min_salary
+
+){
         try {
-            return dao.SELECT_ALL_JOBS();
+            return dao.SELECT_ALL_JOBS(min_salary);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
