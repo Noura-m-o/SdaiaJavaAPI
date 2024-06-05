@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>ExcersiseDay6</artifactId>
+    <artifactId>ExcersiseDay7</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>ExcersiseDay6</name>
+    <name>ExcersiseDay7</name>
 
     <build>
-        <finalName>ExcersiseDay6</finalName>
+        <finalName>ExcersiseDay7</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

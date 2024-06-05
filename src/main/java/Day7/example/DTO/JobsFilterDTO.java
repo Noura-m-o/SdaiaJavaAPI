@@ -1,9 +1,9 @@
-package org.example.DTO;
+package Day7.example.DTO;
 
 
 import jakarta.ws.rs.QueryParam;
 
-public class JobsDTO {
+public class JobsFilterDTO {
     private @QueryParam("min_salary") Double min_salary;
 
     public Double getMin_salary(){
