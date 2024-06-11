@@ -1,4 +1,4 @@
-package Day7.example.exceptions;
+package Day10.example.exceptions;
 
 public class DataNotFoundException extends RuntimeException  {
 

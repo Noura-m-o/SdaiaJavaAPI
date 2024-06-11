@@ -1,22 +1,21 @@
-package Day7.example.DTO;
+package Day10.example.Models;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-public class JobsDTO {
+public class Jobs {
 
     private int job_id;
     private String job_title;
     private double min_salary;
     private double max_salary;
-    private ArrayList<LinkDTO> links = new ArrayList<>();
 
-   // public JobsDTO() {
-   // }
+    public Jobs() {
+    }
 
-    public JobsDTO(double max_salary, double min_salary, String job_title, int job_id) {
+    public Jobs(double max_salary, double job_salary, String job_title, int job_id) {
         this.max_salary = max_salary;
-        this.min_salary = min_salary;
+        this.min_salary = job_salary;
         this.job_title = job_title;
         this.job_id = job_id;
     }
@@ -37,12 +36,12 @@ public class JobsDTO {
         this.job_title = job_title;
     }
 
-    public double getMin_salary() {
+    public double getJob_salary() {
         return min_salary;
     }
 
-    public void setMin_salary(double min_salary) {
-        this.min_salary = min_salary;
+    public void setJob_salary(double job_salary) {
+        this.min_salary = job_salary;
     }
 
     public double getMax_salary() {
@@ -53,25 +52,15 @@ public class JobsDTO {
         this.max_salary = max_salary;
     }
 
-    public ArrayList<LinkDTO> getLinks() {
-        return links;
-    }
-
-    public JobsDTO()throws SQLException {
-       job_id = rs.getInt("job_id");
+    public Jobs(ResultSet rs)throws SQLException {
+        job_id = rs.getInt("job_id");
         job_title = rs.getString("job_title");
-      min_salary = rs.getDouble("min_salary");
-       max_salary = rs.getDouble("max_salary");
+        min_salary = rs.getDouble("min_salary");
+        max_salary = rs.getDouble("max_salary");
 
 
     }
 
-    public void addLink(String url, String rel) {
-        LinkDTO link = new LinkDTO();
-        link.setLink(url);
-        link.setRel(rel);
-        links.add(link);
-    }
     @Override
     public String toString() {
         return "Jobs{" +

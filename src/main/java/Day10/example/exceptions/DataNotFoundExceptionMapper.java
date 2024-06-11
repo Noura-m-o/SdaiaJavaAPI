@@ -1,26 +1,24 @@
-package Day7.example.exceptions;
+package Day10.example.exceptions;
 
 
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
-import Day7.example.DTO.ErrorMessage;
-
-import java.sql.SQLException;
+import Day10.example.DTO.ErrorMessage;
 
 
 @Provider
-public class SQLExceptionMapper implements ExceptionMapper<SQLException> {
+public class DataNotFoundExceptionMapper implements ExceptionMapper<DataNotFoundException>{
 
     @Override
-    public Response toResponse(SQLException exception) {
+    public Response toResponse(DataNotFoundException exception) {
         ErrorMessage err = new ErrorMessage();
         err.setErrorContent(exception.getMessage());
-        err.setErrorCode(500);
+        err.setErrorCode(404);
         err.setDocumentationUrl("https://google.com");
 
         return Response
-                .status(Response.Status.INTERNAL_SERVER_ERROR)
+                .status(Response.Status.NOT_FOUND)
                 .entity(err)
                 .build();
     }

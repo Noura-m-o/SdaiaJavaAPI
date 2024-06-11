@@ -1,4 +1,4 @@
-package Day7.example.DTO;
+package Day10.example.DTO;
 
 public class ErrorMessage {
 

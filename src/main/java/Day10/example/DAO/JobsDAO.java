@@ -1,7 +1,7 @@
-package Day7.example.DAO;
+package Day10.example.DAO;
 
 
-import Day7.example.Models.Jobs;
+import Day10.example.Models.Jobs;
 
 
 import java.sql.*;
